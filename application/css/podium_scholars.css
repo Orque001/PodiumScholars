@@ -1,0 +1,184 @@
+.search-container { text-align: center; padding: 20px; }
+#map { height: 540px; width: 540px; margin-inline: auto;}
+DEMO
+
+.results-container { 
+    text-align: right; 
+    padding: 20px;
+    border: solid;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center; /* justify-content is used for rows */
+    column-gap: 15px;
+    row-gap: 20px;
+    padding: 20px;
+}
+
+.grid-item {
+    border: 1px solid;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0.1);
+    cursor: pointer;
+    text-align: center;
+    animation: 1.5s fadeInAnimation;
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.grid-item:hover {
+    background-color: #faae2b;
+}
+
+.school-info {
+    position: fixed;
+    border-radius: 8px;
+    border: 2px solid;
+    border-color: black;
+    /* overflow: hidden; */
+    top: 50%;
+    left: 50%;
+    width: 75%;
+    height: 92%;
+    padding: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    background: #a9adac;
+    transform: translate(-50%, -50%);
+    z-index: 1001; /* Make sure it's above other content */
+    animation: 0.5s fadeInAnimation;
+    display: none;
+    overflow-y: auto;
+}
+
+/* Goal is to have single tracks horizontally but two columns vertically */
+.school-grid-container {
+    height: 50%;
+    display: grid;
+    overflow-y: auto;
+    grid-template-rows: 350px;
+    grid-template-columns: minmax(500px, auto);
+}
+
+/* .school-location-grid {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    place-self: center;
+} */
+
+#map2 {
+    height: 540px;
+    width: 540px;
+    margin-inline: auto;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    place-self: center;
+}
+
+.school-info-grid {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    width: 75%;
+    padding: 10px;
+    max-width: 100%;
+    height: 100%;
+    place-self: center;
+    text-align: center;
+    font-size: 36px;
+}
+
+ /* Grid will utilize single column but multiple rows dynamically */
+.school-athlete-grid {
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    justify-content: center;
+    gap: 10px;
+    border: 1px solid;
+    border-color: black;
+    border-radius: 8px;
+    grid-row-start: 2;
+    grid-column-start: 1;
+    /* max-width: 100%; */
+    width: 95%;
+    padding: 20px;
+    overflow-y: auto;
+    /* justify-content: center; */
+}
+
+.school-review-item {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+    /* background-color: #fffffe; */
+    border: 2px solid;
+    border-color: black;
+    border-radius: 5px;
+    place-self: left;
+    color: black;
+}
+
+.user-profile {
+    order: 1;
+    flex: none;
+    height: auto;
+    place-self: center;
+    text-align: center;
+}
+
+.default-image {
+    border-radius: 500px;
+}
+
+.username {
+    flex: 1;
+    order: 2;
+    padding: 10px;
+}
+
+.review-text {
+    order: 3;
+    flex-wrap: wrap;
+    padding: 10px
+}
+
+/* Search result display modifications based on window size */
+@media (max-width: 800px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+    }
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

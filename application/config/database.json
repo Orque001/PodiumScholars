@@ -1,0 +1,9 @@
+{
+    "database": {
+        "host": "csc648db.ch0yewaag8xs.us-west-1.rds.amazonaws.com",
+        "port": 3306,
+        "database": "CSC648DB",
+        "user": "root",
+        "password": "12345678"
+    }
+}

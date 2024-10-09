@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <!-- Main title of the webpage -->
+    <h1>User Dashboard</h1>
+    <div class="user-info" id="user-info">
+        <img src="./images/default_icon.jpg" alt="User Icon" class="user-icon">
+        <p id="userFullName"> Welcome, First Name Last Name</p>
+        <p id="userEmail">default@gmail.com</p>
+        <div class="bio-section">
+            <form action="/dashboard" method="POST">
+                <label for="userBio">Your Bio:</label>
+                <p></p>
+                <textarea id="userBio" name="userBio" rows="4" cols="50" placeholder="Tell us something about yourself..."></textarea>
+                <p></p>
+                <button type="submit">Submit Bio</button>
+            </form>
+        </div>
+    </div>
+    <!-- Placeholder for future navigation bar insertion -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- PlaceHolder for dashboard icon-->
+    <div id="dashboard-icon-placeholder"></div>
+
+    <!-- Link to the our JavaScript script file -->
+    <script src="/script.js"></script>
+</body>
+</html>

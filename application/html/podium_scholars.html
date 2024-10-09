@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Athlete Search</title>
+
+        <link rel="apple-touch-icon" sizes="57x57" href="./images/favicon_io/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="./images/favicon_io/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="./images/favicon_io/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="./images/favicon_io/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="./images/favicon_io/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="./images/favicon_io/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="./images/favicon_io/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="./images/favicon_io/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon_io/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="./images/favicon_io/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon_io/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="./images/favicon_io/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon_io/favicon-16x16.png">
+        <link rel="manifest" href="./images/favicon_io/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="stylesheet" href="./css/podium_scholars.css">
+        <link rel="stylesheet" href="./css/styles.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="crossorigin=""/>
+    </head>
+    <body>
+
+    <div class="header">
+        <!-- Main title of the webpage -->
+        <h1>Search</h1>
+    </div>
+
+    <div class="search-container">
+        <input type="text" id="schoolSearch" placeholder="Search by School...">
+        <select id="sportSelect">
+            <option value="">Select Sport</option>
+            <option value="tennis">Tennis</option>
+            <option value="fencing">Fencing</option>
+            <option value="gymnastics">Gymnastics</option>
+            <option value="100 meters">400m Dash</option>
+            <option value="200 meters">400m Dash</option>
+            <option value="400 meters">400m Dash</option>
+            <option value="curling">Curling</option>
+            <option value="long jump">Long Jump</option>
+            <option value="taekwondo">Taekwondo</option>
+            <option value="Basketball"></option>
+            <option value="Rowing"></option>
+            <option value="Softball"></option>
+            <option value="Long Jump"></option>
+            <option value="Shot Put"></option>
+            <option value="Hammer Throw"></option>
+            <option value="High jump"></option>
+            <option value="Diving"></option>
+        </select>
+        <select id="sortSelect">
+            <option value="">Sort by...</option>
+            <option value="name">Alphabetical Order</option>
+            <option value="academia_rating">Rating</option>
+        </select>
+        <button onclick="performSearch()">Search</button>
+    </div>
+
+    <div class="results-container">
+
+        <div class="grid-container">
+            <!-- Search results will dynamically populate here after search -->
+        </div>
+    </div>
+
+    <div class="school-info">
+        <button class="close-button" onclick="closePopup()">
+            <span aria-hidden=""true">&times</span>
+        </button>
+
+        <!-- THIS WILL GET CLEANED AFTER MAPS IS FUNCTIONS AS DESIRED -->
+        <div class="school-grid-container">
+            <!-- <div class="school-location-grid">
+                <img src="./images/gator_scaled.jpg"> 
+            </div> -->
+            <div id="map2"></div>
+            <div class="school-info-grid">
+                <!-- School info will populate here -->
+            </div>
+        </div>
+
+        <div class="school-athlete-grid">
+            <!-- Atheletes will dynamically populate here -->
+            <div class="school-review-item">
+                <div class="user-profile">
+                    <img src="./images/no_image_75px.jpg" class="default-image">
+                    <p>username</p>
+                    <p>5/5</p>
+                </div>
+
+                <div class="review-text">
+                    <p>This school smells at times. But it smells like home. 5/5
+                        We will continue to fill this with spam but what can I do.
+                        This is another example of some text you would read.
+                        But this? This is not any example. This is.
+                        An advanced example. Who would even try to write this?
+                        It was me. I would try to write this.
+
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Aenean sit amet metus velit. Morbi non iaculis ipsum, 
+                        vel gravida leo. Nunc ac tincidunt sapien. 
+
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Aenean sit amet metus velit. Morbi non iaculis ipsum, 
+                        vel gravida leo. Nunc ac tincidunt sapien. 
+                        Maecenas quis metus vel orci pulvinar molestie at ac nisi. 
+                        Praesent egestas tincidunt dapibus. Aenean ut tellus viverra, 
+                        posuere elit sed, maximus erat. Aenean et dictum odio, a aliquet nisi. 
+                        Donec eu lacinia eros. Aliquam quis magna molestie, interdum leo eget, 
+                        euismod massa. In faucibus lobortis nisi at pulvinar. Cras id lacus consequat
+                         nunc scelerisque lacinia. Nunc at lacus ligula. Integer mollis erat ac 
+                         lacus rutrum venenatis id et neque.
+                    </p>    
+                </div>
+            </div>
+
+            <div class="school-review-item">
+                <img src="./images/no_image_75px.jpg" class="default-image"> 
+            </div>
+
+            <div class="school-review-item">
+                <img src="./images/no_image_75px.jpg" class="default-image"> 
+            </div>
+
+            <div class="school-review-item">
+                <img src="./images/no_image_75px.jpg" class="default-image"> 
+            </div>
+        </div>
+    </div>
+
+    <div id="map"></div>
+
+    <!-- Placeholder for future navigation bar insertion -->
+
+    <div id="navbar-placeholder"></div>
+
+    <!-- Link to the our JavaScript script file -->
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="crossorigin=""></script>
+    <script src="/script.js"></script>
+    <script src="/searchScript.js"></script>
+    </body>
+</html>

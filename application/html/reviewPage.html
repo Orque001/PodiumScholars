@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review page</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <form action="/readReviews/postReview" method = "POST">
+        <h1>{COLLEGE}</h1>
+        <p>Enter a rating: <input type="number" min="1" max="5" name="rating"></p>
+        <p>Enter a review:<br>
+            <textarea name="reviewText"></textarea></p>
+        <input type="hidden" name="university_id" value="{CID}">
+        <input type="hidden" name="user_id" value="{CID}">
+        <button type="submit">Save Review</button>
+    </form>
+
+    <script src="/script.js"></script>
+</body>
+</html>

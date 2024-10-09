@@ -1,0 +1,306 @@
+/* Global settings for all html pages*/
+/* Most similar to Palette #5 */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f2f7f5; /* Bright purple background */
+    color: #00473e; 
+}
+/* Landing page but mostly for about.html at the moment*/
+.landing-page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    background-size: cover;
+    color: #475d5b;
+}
+h1 {
+    font-size: 4em;
+    text-align: center;
+    padding: 50px;
+}
+#teamLogo{
+    mix-blend-mode: multiply;
+}
+/* Justisfies the left column of the article box*/
+.landing-page-left {
+    flex: 1; 
+    display: flex;
+    justify-content: flex-end; 
+    padding-right: 20px; 
+}
+
+/* Justifies the other side of the article box, see above*/
+.landing-page-text {
+    flex: 2;
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(10px); 
+    border-radius: 8px; 
+    padding: 50px; 
+    margin: 50px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    z-index: 1; 
+    position: relative; 
+    overflow: hidden;
+}
+
+/* Animates the effects around landing-page-text, with a line floating around the box*/
+.landing-page-text::before,
+.landing-page-text::after {
+    content: '';
+    position: absolute;
+    border: 2px solid transparent;
+    border-radius: inherit; 
+    z-index: 2; /* Above the div content */
+}
+
+/* This is for the horizontal line*/
+.landing-page-text::before {
+    top: 0;
+    right: 100%;
+    width: 100%;
+    height: 2px; /* Thickness of the right border */
+    background: linear-gradient(90deg, transparent, rgb(75, 230, 14));
+    animation: slideBorderHorizontal 8s linear infinite; 
+}
+
+/* This if for the vertical line */
+.landing-page-text::after {
+    top: 100%;
+    right: 0;
+    height: 100%;
+    width: 2px; 
+    background: linear-gradient(180deg, transparent, rgb(75, 230, 14)); 
+    animation: slideBorderVertical 8s linear infinite; 
+    animation-delay: 2s; 
+}
+
+@keyframes slideBorderHorizontal {
+    0%, 100% { right: 100%; }
+    50% { right: 0; }
+}
+
+@keyframes slideBorderVertical {
+    0%, 100% { top: 100%; }
+    50% { top: 0; }
+}
+.landing-page2 {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content:center; 
+    height: 20vh; 
+    text-align:center; 
+}
+
+h1 {
+    margin-bottom:0.5em; 
+}
+
+.hero-image {
+    max-width: 50%; 
+    height: auto; 
+}
+.neubrutalism-header {
+    text-align:center;
+    padding: 1em;
+}
+
+.title-neubrutalism {
+    font-size: 3em;
+    text-transform: uppercase;
+    line-height: 0.8;
+    font-weight:bold;
+    margin-bottom:0.2em;
+}
+.title-website-design {
+    font-size: 2.5em;
+    text-transform: uppercase;
+    background:yellow;
+    display: inline-block;
+    padding: 0.1em 0.5em;
+    position: relative;
+    top: -0.3em;
+}
+.global-message {
+    width: 100%;
+    color: black; 
+    text-align: center;
+    padding: 10px 0;
+    top: 0;
+    z-index: 999; 
+}
+
+/* This sets the navbar color and font*/
+.navbar {
+    background-color:#333; 
+    color: white;
+    width: 100%;
+    position:fixed;
+    top: 40px; /*Fixed at the top now */
+    box-shadow: 0px 4px 0px 0px #000; 
+    z-index: 1000; 
+}
+
+.navbar ul {
+    list-style-type:none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content:space-around;
+    background-color: #538088;
+}
+
+.navbar ul li {
+    display: block;
+}
+
+/* Navbar Text */
+.navbar ul li a {
+    display: block;
+    padding: 1em;
+    text-decoration: none;
+    color: #00473e;
+    text-transform:uppercase; 
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s; 
+}
+/* This sets the on-hover effect for the navbar*/
+.navbar ul li a:hover {
+    background-color: #faae2b; 
+    color:#ffffff; 
+    box-shadow: 0px -3px 0px 0px #222; 
+}
+
+.centered-title {
+    text-align: center;
+    margin-top: 2rem; 
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+/* This is the glassmorphism cards for the about.html*/
+/* border-radius here due to animation border-radius */
+.card {
+    width: 150px;
+    height: 200px;
+    border-radius: 8px;
+    position: relative;
+    margin: 50px;
+    text-decoration: none;
+    color: #00473e;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+/* Background color for cursor on tile */
+.card:hover {
+    background-color: #faae2b;
+}
+
+.card-inner {
+    width: inherit;
+    height: inherit;
+    background-color: rgba(255, 255, 255, .05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(#b0e633, #53ef7d);
+    border-radius: 50%;
+    position: absolute;
+    top: -25px;
+    left: 25px; /* Adjust when needed */
+    z-index: 0; /* behind the card-inner */
+    animation: float 4s ease-in-out infinite alternate;
+}
+
+/* This sets different colors behind each card*/
+.row .card:nth-of-type(1) .circle { background: radial-gradient(circle, #ff9999, #ff4d4d); }
+.row .card:nth-of-type(2) .circle { background: radial-gradient(circle, #99ccff, #4d88ff); }
+.row .card:nth-of-type(3) .circle { background: radial-gradient(circle, #99ff99, #4dff4d); }
+.row .card:nth-of-type(4) .circle { background: radial-gradient(circle, #ffff99, #ffff4d); }
+.row .card:nth-of-type(5) .circle { background: radial-gradient(circle, #7fd1b9, #1ab394); }
+.row .card:nth-of-type(6) .circle { background: radial-gradient(circle, #f7b267, #f78e69); }
+.row .card:nth-of-type(7) .circle { background: radial-gradient(circle, #b2a4f4, #836efa); } 
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(30px);
+    }
+}
+
+.member-photo {
+    width:80px;
+    height: 80px;
+    border-radius:50%;
+    margin-bottom: 10px;
+}
+
+.regPromptContainer {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+}
+
+.regFieldset {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+.loginFieldset {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    box-shadow: none;
+}
+
+/* Tiny Dashboard Icon*/
+.tiny-user-info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    margin-top: 0px;
+    position: absolute;
+    top: 0;
+    left: 10;
+    padding-right: 5px;
+}
+
+.tiny-user-icon {
+    width: 30px;
+    height: 30px; 
+    border-radius: 50%;
+    margin-right: 10px; /* space between the icon and the text */
+}
+
+/*Regular Dashboard*/
+.user-info {
+    text-align: center;
+    margin-top: 20px;
+}

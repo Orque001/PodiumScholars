@@ -1,0 +1,33 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "dependencies for webapp",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./application/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "production:start": "NODE_ENV=production node ./application/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CSC-648-SFSU/csc-648-02-spring24-team03.git"
+  },
+  "author": "teamnn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CSC-648-SFSU/csc-648-02-spring24-team03/issues"
+  },
+  "homepage": "https://github.com/CSC-648-SFSU/csc-648-02-spring24-team03#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "colors": "^1.4.0",
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "mysql2": "^3.9.2",
+    "nodemon": "^3.1.0",
+    "req-flash": "^0.0.3",
+    "test": "^3.3.0"
+  }
+}

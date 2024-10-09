@@ -1,0 +1,10 @@
+package.json @Leiwo94
+.gitignore @Leiwo94
+package-lock.json @Leiwo94
+CODEOWNERS @Leiwo94
+credentials/ @Leiwo94
+application/server.js @Leiwo94
+application/config/database.js @Leiwo94
+application/config/database.json @Leiwo94
+application/config/database.dev.json @Leiwo94
+.github/ @Leiwo94

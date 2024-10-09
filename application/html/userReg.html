@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+<div class="appContainer">
+    <div id="thing" class="regFormContainer">
+        <div class="regInfoContainer" id="registration">
+            <div id="regHeaderContainer" class="redHeaderContainer">
+                <header class="regHeaderText">
+                    <h1>New User Registration</h1>
+                </header>
+            </div>
+            <form id="userRegForm" method="POST" action="/users/register/"
+                enctype="application/x-www-form-urlencoded">
+                <div class="regPromptContainer">
+                    <p class="regPrompt">Please Enter Registration Information Below</p>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+                <div class="regFieldset">
+                    <fieldset class="regFieldset">
+                        <!--User Info-->
+                        <label for="regFirstName">First Name</label>
+                        <br>
+                        <input id="regFirstName" class="infoInput" type="text" name="regFirstName" required
+                            placeholder="First Name" />
+                        <br>
+                        <br>
+                        <label for="regLastName">Last Name</label>
+                        <br>
+                        <input id="regLastName" class="infoInput" type="text" name="regLastName" required
+                            placeholder="Last Name" />
+                        <br>
+                        <br>
+                        <label for="regEmail">Email</label>
+                        <br>
+                        <input id="regEmail" class="infoInput" type="email" name="regEmail" required placeholder="Email" />
+                        <br>
+                        <br>
+                        <label for="regUsername">Username</label>
+                        <br>
+                        <input id=" " class="infoInput" type="text" name="regUsername" required
+                            placeholder="Username" />
+                        <br>
+                        <br>
+                        <label for="regPass">Password</label>
+                        <br>
+                        <input id="regPass" class="infoInput" type="password" name="regPass" required
+                            placeholder="password" />
+                        <br>
+                        <br>
+                        <label for="regConfirmPass">Confirm Password</label>
+                        <br>
+                        <input id="regConfirmPass" class="infoInput" type="password" name="regConfirmPass" required
+                            placeholder="Confirm Password" />
+                        <br>
+                        <br>
+                        <button type="submit">Register</button>
+                    </fieldset>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+
+<!-- Placeholder for future navigation bar insertion -->
+<div id="navbar-placeholder"></div>
+
+<!-- Login form will be loaded here -->
+<div id="login-placeholder"></div>
+        <!-- Link to the our JavaScript script file -->
+        <script src="/script.js"></script>
+
+</html>
